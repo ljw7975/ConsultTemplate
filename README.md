@@ -1,0 +1,1 @@
+# psychiatristic-assessment-generator
