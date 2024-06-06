@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/stylesheet.css" />
+
+    <!-- Fonts -->
+    <!-- https://fonts.google.com/specimen/Comme?vfonly=true&query=comme -->
+
+    <!-- Color schemes -->
+    <!-- https://colorhunt.co/palette/4721834b56d282c3ecf1f6f5 -->
+    <!-- https://colorhunt.co/palette/06283d1363df47b5ffdff6ff -->
+
+    <!-- Website inspirations -->
+    <!-- https://www.godaddy.com/en-ca -->
+    <!-- https://www.behance.net/gallery/165787897/Registration-page -->
+
+    <!-- Form inspirations -->
+    <!-- https://dribbble.com/shots/18976442-Onboarding -->
+  </head>
+
+  <body>
+    <header>
+      <h1>Psychiatristic assessment note generator</h1>
+      <nav>Institution</nav>
+    </header>
+
+    <!-- Progress Bar -->
+    <aside>
+      <ul class="progress-bar">
+        <li class="progress-bar__step step-1 in-progress">
+          <h2 class="progress-bar__heading">Step 1</h2>
+          <p class="progress-bar__subheading">Patient Information</p>
+        </li>
+        <li class="progress-bar__step step-2">
+          <h2 class="progress-bar__heading">Step 2</h2>
+          <p class="progress-bar__subheading">Assessment</p>
+        </li>
+        <li class="progress-bar__step step-3">
+          <h2 class="progress-bar__heading">Step 3</h2>
+          <p class="progress-bar__subheading">ID</p>
+        </li>
+        <li class="progress-bar__step step-4">
+          <h2 class="progress-bar__heading">Step 4</h2>
+          <p class="progress-bar__subheading">RFR & CC</p>
+        </li>
+        <li class="progress-bar__step step-5">
+          <h2 class="progress-bar__heading">Step 5</h2>
+          <p class="progress-bar__subheading">HPI</p>
+        </li>
+        <li class="progress-bar__step impression-step step-6">
+          <h2 class="progress-bar__heading">Step 6</h2>
+          <p class="progress-bar__subheading">Impression</p>
+        </li>
+        <li class="progress-bar__step impression-step step-7">
+          <!-- <h2 class="progress-bar__heading">Step 7</h2> -->
+          <!-- <p class="progress-bar__subheading">Impression - Precipitating</p> -->
+        </li>
+        <li class="progress-bar__step impression-step step-8">
+          <!-- <h2 class="progress-bar__heading">Step 8</h2> -->
+          <!-- <p class="progress-bar__subheading">Impression - Perpetuating</p> -->
+        </li>
+        <li class="progress-bar__step impression-step step-9">
+          <!-- <h2 class="progress-bar__heading">Step 9</h2> -->
+          <!-- <p class="progress-bar__subheading">Impression - Protective</p> -->
+        </li>
+        <li class="progress-bar__step impression-step step-10">
+          <!-- <h2 class="progress-bar__heading">Step 10</h2> -->
+          <!-- <p class="progress-bar__subheading">Impression - Protective</p> -->
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+      <section class="form__container">
+        <!-- Multi-step Form -->
+        <form action="" id="myForm" method="">
+          <!-- Step 1 -->
+          <section class="form__step step-1">
+            <h3 class="form__heading">Patient Information</h3>
+
+            <div class="form__text-input">
+              <label
+                >Referring Doctor
+                <input type="text" name="referringDoctor" id="r_doctor_input" />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >Supervisor
+                <input type="text" name="supervisor" id="supervisor_input" />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >First Name
+                <input type="text" name="firstName" id="fname_input" required />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >Last Name
+                <input type="text" name="lastName" id="lname_input" />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label for="age"
+                >Age
+                <input type="number" name="age" id="age" min="1" />
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <p class="group__heading">Gender</p>
+              <label>
+                <input type="radio" name="gender" value="male" />
+                Male
+              </label>
+              <label>
+                <input type="radio" name="gender" value="female" />
+                Female
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  class="shows-input"
+                  name="gender"
+                  value="other"
+                />
+                Other
+                <input
+                  type="text"
+                  class="text-input additional-input hide"
+                  name="genderTextInput"
+                  id="gender_input"
+                />
+              </label>
+            </div>
+
+            <div class="form__select-input">
+              <label
+                >Pronoun
+                <select name="pronoun">
+                  <option selected disabled hidden></option>
+                  <option value="he">he</option>
+                  <option value="she">she</option>
+                  <option value="they">they</option>
+                </select>
+              </label>
+            </div>
+
+            <!-- Jaewon-->
+            <div class="form__radio-group">
+              <p class="group__heading">Contact Method</p>
+              <label>
+                <input type="radio" name="contactMethod" value="inPerson" />
+                In Person
+              </label>
+              <label>
+                <input type="radio" name="contactMethod" value="telephone" />
+                Telephone
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  class="shows-input"
+                  name="contactMethod"
+                  value="virtual"
+                />
+                Virtual
+                <input
+                  type="text"
+                  class="text-input additional-input hide"
+                  name="contactMethodTextInput"
+                  id="virtual_input"
+                />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >Address
+                <input type="text" name="address" id="address_input" />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >City
+                <input type="text" name="city" id="city_input" />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >Phone
+                <input
+                  type="tel"
+                  name="phone"
+                  maxlength="10"
+                  id="phone_input"
+                />
+              </label>
+            </div>
+            <p id="step1-hidden" hidden>please fill out required field</p>
+            <button
+              type="button"
+              class="continue-button"
+              value="1"
+              id="step1-continue"
+            >
+              Continue
+            </button>
+          </section>
+
+          <!-- Step 2 -->
+          <section class="form__step step-2 hide">
+            <h3 class="form__heading">Assessment</h3>
+
+            <div class="form__text-input">
+              <label
+                >Start time
+                <input type="time" name="startTime" id="start_time_input" />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >End time
+                <input type="time" name="endTime" id="end_time_input" />
+              </label>
+            </div>
+
+            <!-- <div class="form__select-input">
+                        <label for="month">Month</label>
+                        <select id="month" name="month">
+                            <option selected disabled hidden></option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                    </div> -->
+            <div class="form__text-input">
+              <label
+                >Date
+                <input type="date" name="date" id="date_input" />
+              </label>
+            </div>
+
+            <button type="button" class="continue-button" value="2">
+              Continue
+            </button>
+            <button type="button" class="back-button" value="2">Back</button>
+          </section>
+
+          <!-- Step 3 -->
+          <section class="form__step step-3 hide">
+            <h3 class="form__heading">ID</h3>
+
+            <div class="form__select-input">
+              <label
+                >Marital Status
+                <select name="maritalStatus" id="marital_status_input">
+                  <option selected disabled hidden></option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <p class="group__heading">Live with</p>
+              <label>
+                <input type="radio" name="liveWith" value="alone" />
+                Alone
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  class="shows-input"
+                  name="liveWith"
+                  value="people"
+                />
+                People
+                <input
+                  type="text"
+                  class="text-input additional-input hide"
+                  name="liveWithTextInput"
+                  id="liveWith_input"
+                />
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <p class="group__heading">Work</p>
+              <label>
+                <input
+                  type="radio"
+                  class="shows-input"
+                  name="work"
+                  value="works"
+                />
+                Works as
+                <input
+                  type="text"
+                  class="text-input additional-input hide"
+                  name="workTextInput"
+                  id="work_input"
+                />
+              </label>
+
+              <label>
+                <input type="radio" name="work" value="odsp" />
+                Is supported by ODSP
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  class="shows-input"
+                  name="work"
+                  value="lastWorked"
+                />
+                Last worked as
+                <input
+                  type="text"
+                  class="text-input additional-input hide"
+                  name="workTextInput"
+                  id="work_input"
+                />
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <p class="group__heading">Has children</p>
+              <label>
+                <input type="radio" name="hasChildren" value="yes" />
+                Yes
+              </label>
+              <label>
+                <input type="radio" name="hasChildren" value="no" />
+                No
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <p class="group__heading">Drives</p>
+              <label>
+                <input type="radio" name="drives" value="does" />
+                does
+              </label>
+              <label>
+                <input type="radio" name="drives" value="does not" />
+                does not
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >Psychiatrist
+                <input
+                  type="text"
+                  name="psychiatrist"
+                  id="psychiatrist_input"
+                />
+              </label>
+            </div>
+
+            <div class="form__radio-group">
+              <p class="group__heading">
+                Is referring doctor family physician?
+              </p>
+              <label>
+                <input type="radio" name="gp" value="yes" />
+                Yes
+              </label>
+              <label>
+                <input type="radio" class="shows-input" name="gp" value="no" />
+                No
+                <input
+                  type="text"
+                  class="text-input additional-input hide"
+                  name="gpTextInput"
+                  id="gp_input"
+                />
+              </label>
+            </div>
+
+            <div class="form__text-input">
+              <label
+                >Self Diagnoses
+                <input type="text" name="diagnoses" id="diagnoses_input" />
+              </label>
+            </div>
+
+            <button type="button" class="continue-button" value="3">
+              Continue
+            </button>
+            <button type="button" class="back-button" value="3">Back</button>
+          </section>
+
+          <!-- Step 4 -->
+          <section class="form__step step-4 hide">
+            <h3 class="form__heading">RFR & CC</h3>
+
+            <div class="form__textarea-input">
+              <label
+                >Reason for Referral
+                <textarea
+                  name="reasonForReferral"
+                  id="reasonForReferral_input"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="form__textarea-input">
+              <label
+                >Chief Complaint
+                <textarea
+                  name="chiefComplaint"
+                  id="chiefComplaint_input"
+                ></textarea>
+              </label>
+            </div>
+
+            <button type="button" class="continue-button" value="4">
+              Continue
+            </button>
+            <button type="button" class="back-button" value="4">Back</button>
+          </section>
+
+          <!-- Step 5 -->
+          <section class="form__step step-5 hpi hide">
+            <h3 class="form__heading">HPI</h3>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">Depression</p>
+              <div class="form__radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    class="shows-input"
+                    name="lossOption"
+                    value="mood"
+                  />
+                  Low mood
+                </label>
+
+                <label>
+                  <input
+                    type="radio"
+                    class="shows-input"
+                    name="lossOption"
+                    value="hobbies"
+                  />
+                  Loss of interest in hobbies
+                </label>
+
+                <input
+                  type="text"
+                  name="lossOptionInput"
+                  class="text-input additional-input hide"
+                  placeholder="Enter duration"
+                />
+              </div>
+
+              <div class="form__checkbox-group">
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input poor-sleep"
+                      name="depSymptoms"
+                      value="poor sleep"
+                    />
+                    Poor sleep
+                  </label>
+
+                  <input
+                    type="text"
+                    name="poorSleepInput"
+                    class="text-input additional-input hide"
+                    placeholder="How many hours is the patient sleeping?"
+                  />
+                </div>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="depSymptoms"
+                    value="feelings of guilt"
+                  />
+                  Feelings of guilt
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="depSymptoms"
+                    value="low energy"
+                  />
+                  Low energy
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="depSymptoms"
+                    value="low concentration"
+                  />
+                  Low concentration
+                </label>
+
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input"
+                      name="depSymptoms"
+                      value="appetite change"
+                    />
+                    Appetite change
+                  </label>
+
+                  <div class="additional-input hide form__radio-group">
+                    <label>
+                      <input
+                        type="radio"
+                        name="appetite"
+                        value="an increase in appetite"
+                      />
+                      Increased
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        name="appetite"
+                        value="a decrease in appetite"
+                      />
+                      Decreased
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input"
+                      name="depSymptoms"
+                      value="suicidal thoughts"
+                    />
+                    Suicidal thoughts
+                  </label>
+
+                  <div class="additional-input hide form__radio-group">
+                    <div>
+                      <label>
+                        <input
+                          type="radio"
+                          class="shows-input active-suicidal-thoughts"
+                          name="suicidalThoughts"
+                          value="active suicidal thoughts"
+                        />
+                        Active
+                      </label>
+
+                      <input
+                        type="text"
+                        name="activeSuicidalThoughtsInput"
+                        placeholder="Enter plans"
+                        class="additional-input hide text-input"
+                      />
+                    </div>
+                    <label>
+                      <input
+                        type="radio"
+                        class="passive-suicidal-thoughts"
+                        name="suicidalThoughts"
+                        value="passive suicidal thoughts"
+                      />
+                      Passive
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input homicidal"
+                      name="homicidalThoughts"
+                      value="homicidal-thoughts"
+                    />
+                    Homicidal thoughts
+                  </label>
+
+                  <input
+                    type="text"
+                    name="homicidalThoughtsInput"
+                    placeholder="Describe patient's homicidal thoughts"
+                    class="additional-input hide text-input"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">
+                Generalized Anxiety Disorder
+              </p>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    name="anxietyInfo"
+                    value="anxiety which is difficult to control"
+                  />
+                  Anxiety which is difficult to control
+                </label>
+                <!-- 
+                            <div class="hide additional-input">
+                                <input type="text" class="text-input" name="anxietyDuration" placeholder="Enter duration">
+                                <input type="text" class="text-input anxiety-worry" name="anxietyWorry" placeholder="What does the patient worry about?">
+                            </div> -->
+
+                <div class="hide additional-input">
+                  <input
+                    type="text"
+                    class="text-input anxiety-duration"
+                    name="anxietyDuration"
+                    placeholder="Enter duration"
+                    id="anxietyDuration_id"
+                  />
+                  <input
+                    type="text"
+                    class="text-input anxiety-worry"
+                    name="anxietyWorry"
+                    placeholder="What does the patient worry about?"
+                    id="anxietyWorry_id"
+                  />
+                </div>
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="anxietySymptoms"
+                    value="irritability"
+                  />
+                  Irritability
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="anxietySymptoms"
+                    value="restlessness"
+                  />
+                  Restlessness
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="anxietySymptoms"
+                    value="muscle tension"
+                  />
+                  Muscle tension
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="anxietySymptoms"
+                    value="fatigue"
+                  />
+                  Fatigue
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="anxietySymptoms"
+                    value="sleep disturbance"
+                  />
+                  Sleep disturbance
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="anxietySymptoms"
+                    value="poor concentration"
+                  />
+                  Poor concentration
+                </label>
+
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input anxiety-functional-impairment"
+                      name="functionalImpairment"
+                      value="functional impairment"
+                    />
+                    Functional impairment
+                  </label>
+
+                  <input
+                    type="text"
+                    class="additional-input text-input hide"
+                    name="anxietyFunctionalImpairmentInput"
+                    placeholder="How is the patient's function impaired?"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="checkbox-group__heading">Specific phobia</p>
+
+              <div class="form__text-input">
+                <label>
+                  What phobia does the patient complain of?
+                  <input
+                    type="text"
+                    name="specificPhobiaInput"
+                    class="specific-phobia-input text-input"
+                  />
+                </label>
+              </div>
+
+              <div class="form__text-input">
+                <label>
+                  Enter duration:
+                  <input
+                    type="text"
+                    name="specificPhobiaDuration"
+                    class="specific-phobia-duration text-input"
+                  />
+                </label>
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="specificPhobiaSymptoms"
+                    class="provokes-fear"
+                    value="the situation almost always provokes fear"
+                  />
+                  Situation almost always provokes fear AND
+                </label>
+
+                <div class="additional-input form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="provokesFearOption"
+                      value="is avoided"
+                    />
+                    Is avoided
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="provokesFearOption"
+                      value="is endured with intense fear"
+                    />
+                    Is endured with intense fear
+                  </label>
+                </div>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input phobia-functional-impairment"
+                    name="specificPhobiaSymptoms"
+                    value="functional impairment"
+                  />
+                  Fear causes functional impairment
+                </label>
+
+                <input
+                  type="text"
+                  class="additional-input text-input hide"
+                  name="phobiaFunctionalImpairmentInput"
+                  placeholder="How is the patient's function impaired?"
+                />
+              </div>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">Social Anxiety Disorder</p>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    name="socialAnxietyDisorderSymptom"
+                    value=""
+                  />
+                  Anxiety about possible scrutiny by others
+                </label>
+
+                <input
+                  type="text"
+                  class="additional-input text-input hide anxiety-scrutiny-duration"
+                  name="anxietyScrutinyDuration"
+                  placeholder="Enter duration"
+                />
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    class="social-anxiety-around"
+                    name="socialAnxietyDisorderSymptom"
+                    value=""
+                  />
+                  Anxiety around:
+                </label>
+
+                <div class="additional-input form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="socialAnxietyAroundOption"
+                      value="acting in a way"
+                    />
+                    Acting in a way which will be negatively evaluated
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="socialAnxietyAroundOption"
+                      value="showing symptoms of anxiety"
+                    />
+                    Showing symptoms of anxiety which will be negatively
+                    evaluated
+                  </label>
+                </div>
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    class="social-anxiety-situations"
+                    name="socialAnxietyDisorderSymptom"
+                    value=""
+                  />
+                  Avoidance/enduring of social situations
+                </label>
+
+                <div class="additional-input form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="socialAnxietySituationsOption"
+                      value="avoided"
+                    />
+                    Almost always provoke anxiety and are avoided
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="socialAnxietySituationsOption"
+                      value="endured with intense fear or anxiety"
+                    />
+                    Are endured with intense fear or anxiety
+                  </label>
+                </div>
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    class="social-anxiety-proportion"
+                    name=""
+                    value=""
+                  />
+                  The anxiety is out of proportion to the actual threat posed
+                </label>
+              </div>
+
+              <label>
+                <input
+                  type="checkbox"
+                  class="shows-input social-anxiety-functional-impairment"
+                  name=""
+                  value=""
+                />
+                Anxiety causes functional impairment
+              </label>
+
+              <input
+                type="text"
+                class="additional-input text-input hide"
+                name="socialAnxietyFunctionalImpairmentInput"
+                placeholder="How is the patient's function impaired?"
+              />
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">Panic attacks</p>
+
+              <div class="form__text-input">
+                <label>
+                  Duration of panic attacks:
+                  <input
+                    type="text"
+                    class="text-input panic-attacks-duration"
+                    name="panicAttacksDuration"
+                  />
+                </label>
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="palpitation"
+                  />
+                  Palpitation
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="sweating"
+                  />
+                  Sweating
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="trembling"
+                  />
+                  Trembling
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="shortness of breath"
+                  />
+                  Shortness of breath
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="choking"
+                  />
+                  Choking
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="chest pain"
+                  />
+                  Chest pain
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="nausea"
+                  />
+                  Nausea
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="dizziness"
+                  />
+                  Dizziness
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="paresthesia"
+                  />
+                  Paresthesia
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="derealization"
+                  />
+                  Derealization
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="fear of losing control"
+                  />
+                  Fear of losing control
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="panicAttacksSymptom"
+                    value="fear of dying"
+                  />
+                  Fear of dying
+                </label>
+              </div>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">Agoraphobia</p>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="agoraphobiaSymptoms"
+                  value="public transportation"
+                />
+                Public transportation
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="agoraphobiaSymptoms"
+                  value="being in open spaces"
+                />
+                Being in open spaces
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="agoraphobiaSymptoms"
+                  value="enclosed spaces"
+                />
+                Being in enclosed spaces
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="agoraphobiaSymptoms"
+                  value="being in a crowd"
+                />
+                Being in a crowd
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="agoraphobiaSymptoms"
+                  value="being in a line"
+                />
+                Being in a line
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="agoraphobiaSymptoms"
+                  value="being outside the home alone"
+                />
+                Being outside the home alone
+              </label>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">OCD</p>
+
+              <div>
+                <label> Criterion A: </label>
+
+                <div class="form__checkbox-group" id="ocd-criterion-a">
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input-intrusive"
+                      name="criterionOCDSymptoms"
+                      value="persistent thoughts"
+                    />
+                    Intrusive persistent thoughts
+                  </label>
+
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input-intrusive"
+                      name="criterionOCDSymptoms"
+                      value="urges"
+                    />
+                    Intrusives urges
+                  </label>
+
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="shows-input-intrusive"
+                      name="criterionOCDSymptoms"
+                      value="images"
+                    />
+                    Intrusive images
+                  </label>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      name="intrusiveDurationInput"
+                      class="text-input hide intrusive-duration-input"
+                      placeholder="Enter duration"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="ocdIgnore"
+                  class="ocd-ignore"
+                  value="attemps to ignore thoughts/urges/images"
+                />
+                Attempts to ignore thoughts/urges/images
+              </label>
+
+              <div class="form__text-input">
+                <label>
+                  Describe the patient's compulsion:
+                  <input
+                    type="text"
+                    name="ocdCompulsion"
+                    class="ocd-compulsion-input text-input"
+                  />
+                </label>
+              </div>
+
+              <div class="ocd-compulsion-reason-wrapper hide">
+                <label> Patient carries out compulsions to: </label>
+
+                <div class="additional-input form__checkbox-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="compulsionReason"
+                      value="reduce distress"
+                    />
+                    Reduce distress
+                  </label>
+
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="compulsionReason"
+                      value="prevent"
+                    />
+                    Prevent
+                    <div class="form__text-input additional-input">
+                      <input
+                        type="text"
+                        name="preventInput"
+                        class="text-input ocd-prevent-input"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="obsession-compulsion-effect"
+                    name=""
+                    value=""
+                  />
+                  Obsessions and compulsions:
+                </label>
+
+                <div class="additional-input form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="obsessionEffectOption"
+                      value="time"
+                    />
+                    Are time consuming
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      class="shows-input"
+                      name="obsessionEffectOption"
+                      value="functionalImpairment"
+                    />
+                    Cause functional impairment
+                  </label>
+                  <input
+                    type="text"
+                    id="ocdFunctionalImpairmentInput"
+                    class="additional-input text-input hide"
+                    name="obsessionEffectFunctionalImpairmentInput"
+                    placeholder="How is the patient's function impaired?"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">PTSD</p>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="trauma-exposure"
+                    name=""
+                    value=""
+                  />
+                  Exposure to trauma
+                </label>
+
+                <div class="additional-input form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      class="shows-input"
+                      name="traumaExperienceOption"
+                      value="experience"
+                    />
+                    What did the patient experience?
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      class="shows-input"
+                      name="traumaExperienceOption"
+                      value="witness"
+                    />
+                    What did the patient witness?
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      class="shows-input"
+                      name="traumaExperienceOption"
+                      value="lovedOne"
+                    />
+                    Describe the trauma that the patient's loved one experienced
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      class="shows-input"
+                      name="traumaExperienceOption"
+                      value="repeatedly"
+                    />
+                    Describe the trauma the patient was repeatedly exposed to as
+                    part of work
+                  </label>
+                  <input
+                    type="text"
+                    class="text-input hide additional-input"
+                    name="traumaExperienceOptionInput"
+                    placeholder="Enter trauma"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="intrusion-symptoms"
+                    name=""
+                    value=""
+                  />
+                  Intrusion symptoms
+                </label>
+
+                <div class="additional-input form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="intrusionSymptomOption"
+                      value="memories"
+                    />
+                    Recurrent, involuntary, and intrusive distressing memories
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="intrusionSymptomOption"
+                      value="dreams"
+                    />
+                    Recurrent distressing dream
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="intrusionSymptomOption"
+                      value="flashbacks"
+                    />
+                    Flashbacks
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="intrusionSymptomOption"
+                      value="distress"
+                    />
+                    Intense or prolonged psychological distress at exposure to
+                    internal or external cues that symbolize the event
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="intrusionSymptomOption"
+                      value="reaction"
+                    />
+                    Marked physiological reaction to internal or external cues
+                    that symbolize or resemble an aspect of traumatic event
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="avoidance-symptoms"
+                    name=""
+                    value=""
+                  />
+                  Avoidance symptoms
+                </label>
+
+                <div class="additional-input hide form__checkbox-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdAvoidanceSymptoms"
+                      value="memories"
+                    />
+                    Memories
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdAvoidanceSymptoms"
+                      value="thoughts"
+                    />
+                    Thoughts
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdAvoidanceSymptoms"
+                      value="feelings"
+                    />
+                    Feelings
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdAvoidanceSymptoms"
+                      value="external reminders"
+                    />
+                    External reminders
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="negative-changes"
+                    class="shows-input"
+                    name=""
+                    value=""
+                  />
+                  Negative changes to cognition and mood
+                </label>
+
+                <div class="additional-input hide form__checkbox-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="inability to remember an important aspect of the traumatic events"
+                    />
+                    Inability to remember an important aspect of the traumatic
+                    events
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="persistent and exaggerated negative beliefs or expectations about oneself/others/the world"
+                    />
+                    Persistent and exaggerated negative beliefs or expectations
+                    about oneself, others, or the world
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="persistent and distorted cognitions about the cause or consequences of the traumatic event(s) that lead the individual to blame himself/herself or others"
+                    />
+                    Persistent, distorted cognitions about the cause or
+                    consequences of the traumatic event(s) that lead the
+                    individual to blame himself/herself or others
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="persistent negative emotional state"
+                    />
+                    Persistent negative emotional state
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="markedly diminished interest or participation in significant activities"
+                    />
+                    Markedly diminished interest or participation in significant
+                    activities
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="feelings of detachment or estrangement from others"
+                    />
+                    Feelings of detachment or estrangement from others
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="ptsdNegativeChanges"
+                      value="persistent inability to experience positive emotions"
+                    />
+                    Persistent inability to experience positive emotions
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="arousal-reactivity-changes"
+                    name=""
+                    value=""
+                  />
+                  Changes in arousal and reactivity
+                </label>
+
+                <div class="additional-input hide form__radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="verbal"
+                    />
+                    Verbal aggression
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="physical"
+                    />
+                    Physical aggression
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="reckless"
+                    />
+                    Reckless or self-destructive behaviour
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="hypervigilance"
+                    />
+                    Hypervigilance
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="exaggerated"
+                    />
+                    Exaggerated startle response
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="concentration"
+                    />
+                    Problems with concentration
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="ptsdArousalReactivityChangeOption"
+                      value="sleep"
+                    />
+                    Problems with sleep
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">
+                Borderline personality disorder
+              </p>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="instability"
+                    name=""
+                    value=""
+                  />
+                  Affective instability due to a marked reactivity of mood
+                </label>
+
+                <input
+                  type="text"
+                  class="text-input hide additional-input"
+                  name="instabilityDurationInput"
+                  placeholder="How frequently does the patient's mood fluctuate?"
+                />
+              </div>
+
+              <div class="form__checkbox-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="bpdSymptom"
+                    value="frantic efforts to avoid real or imagined abandonment"
+                  />
+                  Frantic efforts to avoid real or imagined abandonment. Note:
+                  Do not include suicidal or self-mutilating behaviour covered
+                  in criterion 5.
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="bpdSymptom"
+                    value="identity disturbance: markedly and persistently unstable self-image or sense of self"
+                  />
+                  Identity disturbance: markedly and persistently unstable
+                  self-image or sense of self.
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="bpdSymptom"
+                    value="chronic feelings of emptiness"
+                  />
+                  Chronic feelings of emptiness
+                </label>
+              </div>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="bpd-relationships"
+                  name=""
+                  value=""
+                />
+                A pattern of unstable and intense interpersonal relationships
+                characterized by alternating between extremes of idealization
+                and devaluation.
+              </label>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="bpd-impulsivity"
+                    name=""
+                    value=""
+                  />
+                  Impulsivity in at least 2 areas that are potentially
+                  self-damaging ways
+                </label>
+
+                <div class="additional-input hide form__checkbox-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="impulsivitySymptom"
+                      value="spending"
+                    />
+                    Spending
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="impulsivitySymptom"
+                      value="sex"
+                    />
+                    Sex
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="impulsivitySymptom"
+                      value="substance abuse"
+                    />
+                    Substance abuse
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="impulsivitySymptom"
+                      value="reckless driving"
+                    />
+                    Reckless driving
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="impulsivitySymptom"
+                      value="binge eating"
+                    />
+                    Binge eating
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="bpd-anger"
+                    name=""
+                    value=""
+                  />
+                  Inappropriate, intense anger or difficulty controlling anger
+                  (e.g., frequent displays of temper, constant anger, recurrent
+                  physical fights).
+                </label>
+
+                <input
+                  type="text"
+                  class="text-input hide additional-input"
+                  name="angerConsequencesInput"
+                  placeholder="Enter the consequences of this"
+                />
+              </div>
+
+              <label>
+                <input type="checkbox" id="bpd-paranoid" name="" value="" />
+                Transient, stress-related paranoid ideation or severe
+                dissociative symptoms.
+              </label>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">Mania</p>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="mania-elevatedMood"
+                    name=""
+                    value=""
+                  />
+                  Persistently elevated mood
+                </label>
+
+                <div class="additional-input hide">
+                  <label>
+                    Duration:
+                    <input
+                      type="text"
+                      class="persistentlyElevatedMoodDuration"
+                      name="persistentlyElevatedMoodDuration"
+                    />
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="mania-irritableMood"
+                    name=""
+                    value=""
+                  />
+                  Persistently irritable mood
+                </label>
+
+                <div class="additional-input hide">
+                  <label>
+                    Duration:
+                    <input
+                      type="text"
+                      class="persistently-irritable-mood"
+                      name=""
+                    />
+                  </label>
+                </div>
+              </div>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-inflatedSelfEsteem"
+                  name=""
+                  value=""
+                />
+                Inflated self esteem
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-grandiosity"
+                  name=""
+                  value=""
+                />
+                Grandiosity
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-needForSleep"
+                  name=""
+                  value=""
+                />
+                Decreased need for sleep
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-talkativeness"
+                  name=""
+                  value=""
+                />
+                Talkativeness
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-flightOfIdeas"
+                  name=""
+                  value=""
+                />
+                Flight of ideas
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-distractibility"
+                  name=""
+                  value=""
+                />
+                Distractibility
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="mania-incGoalDirected"
+                  name=""
+                  value=""
+                />
+                Increased goal-directed activity
+              </label>
+
+              <div>
+                <label>
+                  <input type="checkbox" class="shows-input" name="" value="" />
+                  Partakes in risky behaviours
+                </label>
+
+                <div class="additional-input hide">
+                  <label>
+                    Describe these behaviours:
+                    <input type="text" name="" />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__checkbox-group">
+              <p class="checkbox-group__heading">Psychosis</p>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="psychosis-auditory"
+                    name=""
+                    value=""
+                  />
+                  Auditory hallucinations
+                </label>
+
+                <div class="additional-input hide">
+                  <div>
+                    <label>
+                      <input
+                        type="checkbox"
+                        id="psychosis-auditory-command"
+                        class="shows-input"
+                        name=""
+                      />
+                      Command
+                    </label>
+
+                    <div class="additional-input hide">
+                      <label>
+                        Describe the commands:
+                        <input
+                          type="text"
+                          class="psychosis_auditory_command"
+                          name="psychosis_auditory_command"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="has-input"
+                      id="psychosis-auditory-duration"
+                      name=""
+                      value=""
+                    />
+                    Duration:
+                    <input
+                      type="text"
+                      class="psychosis_auditory_duration"
+                      name="psychosis_auditory_duration"
+                    />
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    class="shows-input"
+                    id="psychosis-visual"
+                    name=""
+                    value=""
+                  />
+                  Visual hallucination
+                </label>
+
+                <div class="additional-input hide">
+                  <label>
+                    Describe the hallucination:
+                    <input
+                      type="text"
+                      class="psychosis_visual"
+                      name="psychosis_visual"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="continue-button" value="5">
+              Continue
+            </button>
+            <button type="button" class="back-button" value="5">Back</button>
+          </section>
+
+          <section class="form__step step-6 hide">
+            <h3 class="form__heading">Impression</h3>
+            <div class="form__textarea-input">
+              <label for="impressionPresenting">
+                Presenting with:
+                <textarea
+                  name="impressionPresenting"
+                  id="impressionPresenting"
+                  cols="30"
+                  rows="10"
+                >
+                </textarea>
+              </label>
+            </div>
+
+            <button type="button" class="continue-button" value="6">
+              Continue
+            </button>
+            <button type="button" class="back-button" value="6">Back</button>
+          </section>
+
+          <section class="form__step step-7 hide">
+            <h3 class="form__heading">
+              Impression - Predisposing, Precipitating, perpetuating, protective
+            </h3>
+            <div class="form__textarea-input">
+              <label for="impressionComment">
+                Comment:
+                <textarea
+                  name="impressionComment"
+                  id="impressionComment"
+                  cols="30"
+                  rows="10"
+                >
+                </textarea>
+              </label>
+            </div>
+            <button type="button" class="back-button" value="10">Back</button>
+            <button type="submit">Submit</button>
+            <!-- <div class="form__checkbox-group">
+                        <p class="checkbox-group__heading">Biological</p>
+                        <div class="form__checkbox-group">
+                            <label>
+                                <input type="checkbox" name="predisposingBio" value="toxic exposures to utero">
+                                Toxic exposures in utero
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="predisposingBio" value="birth complications">
+                                Birth complications
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="predisposingBio" value="family psychiatric history">
+                                Family psychiatric history
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form__checkbox-group">
+                        <p class="checkbox-group__heading">Psychological</p>
+                        <label>
+                            <input type="checkbox" name="predisposingPsy" value="anxious attachment style">
+                            Anxious attachment style
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingPsy" value="avoidant attachment style">
+                            Avoidant attachment style
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingPsy" value="disorganized attachment style">
+                            Disorganized attachment style
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingPsy" value="low self-esteem">
+                            Low self-esteem
+                        </label>
+                    </div>
+
+                    <div class="form__checkbox-group">
+                        <p class="checkbox-group__heading">Social</p>
+                        <label>
+                            <input type="checkbox" name="predisposingSocial" value="poverty">
+                            Poverty
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingSocial" value="childhood exposure to trauma">
+                            Childhood exposure to trauma
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingSocial" value="temperamental mismatch between parent and child">
+                            Temperamental mismatch between parent and child
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingSocial" value="immigration history">
+                            Immigration history
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="predisposingSocial" value="marginalization/discrimination">
+                            Marginalization/discrimination
+                        </label>
+                    </div>
+
+            <button type="button" class="continue-button" value="7">
+              Continue
+            </button>
+            <button type="button" class="back-button" value="7">Back</button> -->
+          </section>
+
+          <!-- <section class="form__step step-8 hide">
+                    <h3 class="form__heading">Impression - Precipitating</h3>
+                    <p class="checkbox-group__heading">Biological</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="precipitatingBio" value="feelings of guilt">
+                            Medical illness
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingBio" value="low energy">
+                            Substance use
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingBio" value="low concentration">
+                            Pregnancy
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingBio" value="low concentration">
+                            Sleep deprivation
+                        </label>
+                    </div>
+
+                    <p class="checkbox-group__heading">Psychological</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="precipitatingPsy" value="feelings of guilt">
+                            Negative core beliefs
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingPsy" value="low energy">
+                            Difficulty regulating emotions
+                        </label>
+                    </div>
+
+                    <p class="checkbox-group__heading">Social</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="precipitatingSocial" value="feelings of guilt">
+                            Work stressor
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingSocial" value="low energy">
+                            Financial stressor
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingSocial" value="low concentration">
+                            Academic stressor
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingSocial" value="low concentration">
+                            Interpersonal difficulties
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingSocial" value="low concentration">
+                            Loss
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="precipitatingSocial" value="low concentration">
+                            Seperation
+                        </label>
+                    </div>
+
+
+                    <button type="button" class="continue-button" value="8">Continue</button>
+                    <button type="button" class="back-button" value="8">Back</button>
+                </section>
+
+                <section class="form__step step-9 hide">
+                    <h3 class="form__heading">Impression - Perpetuating</h3>
+                    <p class="checkbox-group__heading">Biological</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="perpetuatingBio" value="feelings of guilt">
+                            Chronic illness
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingBio" value="low energy">
+                            Substance use
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingBio" value="low concentration">
+                            Lack of psychiatric follow-up
+                        </label>
+                    </div>
+
+                    <p class="checkbox-group__heading">Psychological</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="feelings of guilt">
+                            Chronic negative core beliefs
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Help-seeking/help rejecting
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Chronic emotional dysregulation
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Unresolved dysfunctional relationships - interpersonal conflicts
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Poor coping skills
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Anxious attachment style
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Avoidant attachment style
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="perpetuatingPsy" value="low energy">
+                            Disorganized attachment style
+                        </label>
+                    </div>
+
+                    <button type="button" class="continue-button" value="9">Continue</button>
+                    <button type="button" class="back-button" value="9">Back</button>
+                </section>
+
+                <section class="form__step step-10 hide">
+                    <h3 class="form__heading">Impression - Protective</h3>
+                    <p class="checkbox-group__heading">Biological</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="protectiveBio" value="feelings of guilt">
+                            Good health
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectiveBio" value="feelings of guilt">
+                            No family psychiatric history
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectiveBio" value="feelings of guilt">
+                            Good response to medications
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectiveBio" value="feelings of guilt">
+                            Above-average intelligence
+                        </label>
+                        <label>
+                            <input type="checkbox" name="protectiveBio" value="feelings of guilt">
+                            No substance use
+                        </label>
+
+                    </div>
+
+                    <p class="checkbox-group__heading">Psychological</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Good reflective capacity
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Good modulation of affect
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Positive sense of self
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Psychologically minded
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Good response to therapy
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Good coping skills
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectivePsy" value="feelings of guilt">
+                            Good insight
+                        </label>
+
+                    <p class="checkbox-group__heading">Social</p>
+                    <div class="form__checkbox-group">
+                        <label>
+                            <input type="checkbox" name="protectiveSocial" value="feelings of guilt">
+                            Positive relationship with family
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectiveSocial" value="feelings of guilt">
+                            Positive relationship with friends
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectiveSocial" value="feelings of guilt">
+                            Financially well-supported
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="protectiveSocial" value="feelings of guilt">
+                            Outpatient healthcare team present
+                        </label>
+                    </div>
+
+                    <button type="button" class="back-button" value="10">Back</button>
+                    <button type="submit">Submit</button>
+                </section> -->
+        </form>
+      </section>
+      <section class="generated-text-container">
+        <section class="generated-text hide">lol</section>
+      </section>
+    </main>
+
+    <!-- <footer>footer</footer> -->
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

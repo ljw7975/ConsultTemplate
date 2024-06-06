@@ -1,1 +1,1 @@
-# psychiatristic-assessment-generator
+# Consult-template
